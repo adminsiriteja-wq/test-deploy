@@ -1,0 +1,384 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SOLAR LOAN FOR PRESENT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a working desk — sticky lookup bar, eligibility checker on top, product cards, then copy-ready answers and a dated log */
+:root{
+  --bg:#f3f5f2; --surface:#ffffff; --ink:#17231f; --muted:#5b6b64; --line:#d9e0db;
+  --accent:#0f6b55; --accent-soft:#e1f0ea; --sun:#c77d0a; --sun-soft:#fbf0dc;
+  --yes:#1f7a3f; --yes-soft:#e3f3e7; --maybe:#9a6a00; --maybe-soft:#fbf1d6; --no:#a23a2f; --no-soft:#f8e3e0;
+  --f-display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111816; --surface:#18221f; --ink:#e6eee9; --muted:#9aaba3; --line:#2a3833;
+  --accent:#5cc8a6; --accent-soft:#16352c; --sun:#f0b44c; --sun-soft:#3a2c12;
+  --yes:#6fd18f; --yes-soft:#163322; --maybe:#e8c15a; --maybe-soft:#352c12; --no:#f0897d; --no-soft:#3a1d1a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111816; --surface:#18221f; --ink:#e6eee9; --muted:#9aaba3; --line:#2a3833;
+  --accent:#5cc8a6; --accent-soft:#16352c; --sun:#f0b44c; --sun-soft:#3a2c12;
+  --yes:#6fd18f; --yes-soft:#163322; --maybe:#e8c15a; --maybe-soft:#352c12; --no:#f0897d; --no-soft:#3a1d1a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:14px 12px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.brand{display:flex;flex-direction:column;gap:0;min-width:0}
+.brand b{font-family:var(--f-display);font-size:20px;letter-spacing:.01em}
+.brand span{font-size:12px;color:var(--muted)}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;flex:1 1 320px;justify-content:flex-end}
+#q{flex:1 1 220px;min-width:0;font:inherit;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+#q:focus,button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{font:inherit;font-size:13px;padding:8px 12px;border:0;background:var(--surface);color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--bg)}
+h2{font-family:var(--f-display);font-size:19px;margin:0;text-wrap:balance}
+.eyebrow{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+section{display:flex;flex-direction:column;gap:14px}
+.sec-head{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between}
+.sec-head p{margin:0;color:var(--muted);font-size:13px}
+/* checker */
+.checker{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:14px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label{font-size:13px;font-weight:600}
+select{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+.tally{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted);align-items:center}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.pill.yes{background:var(--yes-soft);color:var(--yes)} .pill.maybe{background:var(--maybe-soft);color:var(--maybe)} .pill.no{background:var(--no-soft);color:var(--no)}
+.pill.prio{background:var(--sun-soft);color:var(--sun)} .pill.new{background:var(--accent-soft);color:var(--accent)}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(310px,100%),1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card.no{opacity:.62}
+.card .hd{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.who{display:flex;gap:12px;align-items:flex-start;min-width:0}
+.logo{height:36px;width:auto;max-width:140px;border-radius:6px;flex:none;object-fit:contain;background:#fff}
+.card .bank{font-size:12px;color:var(--muted);font-weight:600}
+.card h3{font-family:var(--f-display);font-size:17px;margin:0;line-height:1.3}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px;margin:0}
+.facts dt{color:var(--muted)} .facts dd{margin:0;min-width:0}
+.mono{font-family:var(--f-mono);font-size:12.5px;font-variant-numeric:tabular-nums}
+.why{font-size:13px;padding:8px 10px;border-radius:8px;background:var(--bg)}
+.why.yes{border-left:3px solid var(--yes)} .why.maybe{border-left:3px solid var(--maybe)} .why.no{border-left:3px solid var(--no)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+details{font-size:13px} summary{cursor:pointer;color:var(--no);font-weight:700}
+details li::marker{color:var(--no)}
+details ul{margin:8px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.upd{font-size:11.5px;color:var(--muted);font-family:var(--f-mono)}
+.contact{font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:auto}
+/* answers */
+.answers{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(330px,100%),1fr));gap:14px}
+.ans{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.ans h3{margin:0;font-size:15px;font-weight:600}
+.ans pre{margin:0;white-space:pre-wrap;word-wrap:break-word;font-family:var(--f-body);font-size:13.5px;background:var(--bg);padding:10px 12px;border-radius:8px;max-height:260px;overflow:auto}
+.copyrow{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:inherit;font-size:13px;padding:6px 12px;border-radius:8px;border:1px solid var(--accent);background:transparent;color:var(--accent);cursor:pointer}
+.btn:hover{background:var(--accent-soft)}
+/* log */
+
+/* calculator */
+.calc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:20px}
+@media (max-width:760px){.calc{grid-template-columns:1fr}}
+.calc .inputs{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
+.calc .inputs .full{grid-column:1/-1}
+.calc input[type=number]{font:inherit;font-family:var(--f-mono);padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+.hint{font-size:11.5px;color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.kpi{background:var(--bg);border-radius:10px;padding:10px 12px;min-width:0}
+.kpi b{display:block;font-family:var(--f-mono);font-size:19px;font-variant-numeric:tabular-nums;color:var(--accent);overflow-wrap:anywhere}
+.kpi span{font-size:12px;color:var(--muted)}
+.warn{font-size:13px;padding:8px 10px;border-radius:8px;background:var(--maybe-soft);color:var(--maybe)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+.tbl table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+.tbl th,.tbl td{padding:7px 10px;text-align:right;border-top:1px solid var(--line);white-space:nowrap}
+.tbl th{background:var(--bg);color:var(--muted);font-weight:600;border-top:0}
+.tbl td:first-child,.tbl th:first-child{text-align:left}
+.tbl tr.best td{background:var(--yes-soft)}
+.tbl tr.out td{color:var(--muted)}
+.right{display:flex;flex-direction:column;gap:12px;min-width:0}
+.log{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.log div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:10px 16px;border-top:1px solid var(--line);font-size:13.5px}
+.log div:first-child{border-top:0}
+.log time{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.empty{padding:16px;color:var(--muted);font-size:14px}
+footer{font-size:12px;color:var(--muted)}
+mark{background:var(--sun-soft);color:inherit;padding:0 2px;border-radius:3px}
+@media (max-width:480px){.log div{grid-template-columns:1fr;gap:2px}}
+@media (prefers-reduced-motion:no-preference){.card,.ans{transition:opacity .2s}}
+
+@media (max-width:600px){
+  header.top{position:static}
+  .kpis{grid-template-columns:1fr}
+  .kpi{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .kpi b{font-size:18px}
+  .calc .inputs{grid-template-columns:1fr 1fr}
+  h2{font-size:17px}
+}
+@media (max-width:360px){.calc .inputs{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><b>SOLAR LOAN FOR PRESENT</b><span id="sub"></span></div>
+    <div class="tools">
+      <input id="q" type="search" autocomplete="off">
+      <div class="seg" role="group" aria-label="Language">
+        <button id="lang-th" type="button">ไทย</button><button id="lang-en" type="button">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <section id="check">
+    <div class="sec-head"><div><div class="eyebrow" id="t-eb1"></div><h2 id="t-h1"></h2></div><p id="t-p1"></p></div>
+    <div class="checker">
+      <div class="field"><label for="f-type" id="l-type"></label><select id="f-type"></select></div>
+      <div class="field"><label for="f-nat" id="l-nat"></label><select id="f-nat"></select></div>
+      <div class="field"><label for="f-col" id="l-col"></label><select id="f-col"></select></div>
+      <div class="tally" id="tally"></div>
+    </div>
+    <div class="grid" id="cards"></div>
+  </section>
+
+  <section id="calc-sec">
+    <div class="sec-head"><div><div class="eyebrow" id="t-eb4"></div><h2 id="t-h4"></h2></div><p id="t-p4"></p></div>
+    <div class="calc">
+      <div class="inputs">
+        <div class="field full"><label for="c-prod" id="l-prod"></label><select id="c-prod"></select></div>
+        <div class="field"><label for="c-amt" id="l-amt"></label><input id="c-amt" type="number" min="0" step="10000" value="1000000"></div>
+        <div class="field"><label for="c-yrs" id="l-yrs"></label><input id="c-yrs" type="number" min="1" max="40" step="1" value="7"></div>
+        <div class="field"><label for="c-mlr" id="l-mlr"></label><input id="c-mlr" type="number" min="0" step="0.01" value="6.80"></div>
+        <div class="field"><label for="c-mrr" id="l-mrr"></label><input id="c-mrr" type="number" min="0" step="0.01" value="6.50"></div>
+        <div class="field full"><label for="c-own" id="l-own"></label><input id="c-own" type="number" min="0" step="0.01" placeholder=""></div>
+        <div class="hint full" id="c-hint"></div>
+      </div>
+      <div class="right">
+        <div class="kpis"><div class="kpi"><b id="k-pay">–</b><span id="k-pay-l"></span></div><div class="kpi"><b id="k-int">–</b><span id="k-int-l"></span></div><div class="kpi"><b id="k-avg">–</b><span id="k-avg-l"></span></div></div>
+        <div id="c-warn"></div>
+        <div class="tbl"><table><thead><tr id="c-head"></tr></thead><tbody id="c-rows"></tbody></table></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const UI={
+ th:{sub:"บริษัท สิริเตจะ เอ็นเนอร์ยี่ · ทางเลือกสินเชื่อติดตั้งโซลาร์ 7 ธนาคาร · อัปเดต 19 ต.ค. 2026",q:"ค้นหา เช่น ต่างชาติ, ที่ดินเปล่า, กสิกร, 3%…",
+  eb1:"ใครถามมา",h1:"เช็กว่าลูกค้าใช้สินเชื่อไหนได้",p1:"เลือกข้อมูลลูกค้า แต่ละการ์ดจะบอกว่า ใช้ได้ / ติดต่อธนาคาร / ใช้ไม่ได้ · เรียงตามธนาคาร: กสิกรไทย, กรุงเทพ, SCB, ออมสิน, ธอส., ธพว.",
+  type:"กู้ในนาม",nat:"สัญชาติผู้กู้",natC:"ผู้ถือหุ้นบริษัท",col:"หลักประกันที่มี",
+  types:[["any","ยังไม่รู้"],["ind","บุคคลธรรมดา"],["co","นิติบุคคล (บริษัท)"]],
+  natsI:[["any","ยังไม่รู้"],["thai","คนไทย"],["fsp","ต่างชาติ มีคู่สมรสคนไทย"],["for","ต่างชาติ"]],
+  natsC:[["any","ยังไม่รู้"],["thmaj","คนไทยถือหุ้นเกิน 50%"],["fmaj","ต่างชาติถือหุ้น 50% ขึ้นไป"]],
+  cols:[["any","ยังไม่รู้"],["none","ไม่มีหลักประกัน"],["land","ที่ดินเปล่า"],["house","บ้าน/อาคารที่อยู่อาศัย"]],
+  yes:"ใช้ได้",maybe:"ติดต่อธนาคาร",no:"ใช้ไม่ได้",prio:"ลำดับแรก",nw:"ใหม่",upd:"อัปเดตข้อมูล",
+  rate:"ดอกเบี้ย",amt:"วงเงิน",term:"ระยะกู้",col2:"หลักประกัน",dl:"หมดเขต",more:"Need to know",
+  eb2:"คัดลอกไปตอบได้เลย",h2:"คำตอบสำเร็จรูป",p2:"กดคัดลอกแล้ววางในแชทหรืออีเมล",cth:"คัดลอกภาษาไทย",cen:"Copy English",copied:"คัดลอกแล้ว",
+  eb4:"คำนวณ",h4:"คำนวณค่างวด (เป็นการประเมินเบื้องต้นให้ลูกค้าเห็นภาพ วงเงินและค่างวดจริงต้องส่งเอกสารให้ธนาคารประเมิน)",p4:"ใส่วงเงินและระยะกู้ ระบบคำนวณค่างวดตามอัตราดอกเบี้ยขั้นบันไดของแต่ละสินเชื่อ",prod:"สินเชื่อ",camt:"วงเงินกู้ (บาท)",cyrs:"ระยะกู้ (ปี)",mlr:"MLR (%)",mrr:"MRR (%)",own:"ดอกเบี้ยที่ธนาคารเสนอจริง (% ต่อปี) — เว้นว่างถ้ายังไม่มี",hint:"ค่า MLR/MRR เป็นตัวเลขสมมติ แก้ให้ตรงกับประกาศของธนาคาร · คำนวณแบบลดต้นลดดอกรายเดือน และคำนวณค่างวดใหม่ทุกครั้งที่ดอกเบี้ยเปลี่ยน · เป็นการประมาณการเบื้องต้น ตัวเลขจริงขึ้นกับธนาคาร",kpay:"ค่างวดปีแรก / เดือน",kint:"ดอกเบี้ยรวมทั้งสัญญา",kavg:"ดอกเบี้ยเฉลี่ยต่อปี",yr:"ปีที่",rt:"ดอกเบี้ย",pay:"ค่างวด/เดือน",intY:"ดอกเบี้ยในปี",bal:"เงินต้นคงเหลือ",cmp:"เปรียบเทียบทุกสินเชื่อ ที่วงเงินและระยะกู้เดียวกัน",bk:"ธนาคาร / สินเชื่อ",tot:"ดอกเบี้ยรวม",lim:"เงื่อนไข",ok:"อยู่ในเงื่อนไข",norate:"ไม่มีข้อมูลดอกเบี้ย",overA:"เกินวงเงินสูงสุด",underA:"ต่ำกว่าวงเงินขั้นต่ำ",overT:"เกินระยะกู้สูงสุด",underT:"ต่ำกว่าระยะกู้ขั้นต่ำ",eb3:"ความคืบหน้า",h3:"บันทึกการติดต่อ",none:"ไม่พบข้อมูลที่ตรงกับคำค้น",
+  foot:"ข้อมูลจากเอกสารธนาคาร (ก.ค.–ต.ค. 2026) และการติดต่อธนาคาร ดอกเบี้ยและเงื่อนไขอาจเปลี่ยน ยืนยันกับธนาคารก่อนแจ้งลูกค้าทุกครั้ง"},
+ en:{sub:"Siriteja Energy · Solar loan info from 7 banks · Updated 19 Oct 2026",q:"Search e.g. foreigner, vacant land, KBank, 3%…",
+  eb1:"Who is asking",h1:"Check which loans the client can use",p1:"Pick the client's situation. Each card shows Fits / Contact the bank / Doesn't fit · ordered by bank: KBank, Bangkok Bank, SCB, GSB, GH Bank, SME D Bank.",
+  type:"Borrower",nat:"Borrower nationality",natC:"Company shareholding",col:"Collateral available",
+  types:[["any","Unknown"],["ind","Individual"],["co","Company"]],
+  natsI:[["any","Unknown"],["thai","Thai"],["fsp","Foreigner with Thai spouse"],["for","Foreigner"]],
+  natsC:[["any","Unknown"],["thmaj","Thai-owned > 50%"],["fmaj","Foreign-owned ≥ 50%"]],
+  cols:[["any","Unknown"],["none","No collateral"],["land","Vacant land"],["house","House / residential building"]],
+  yes:"Fits",maybe:"Contact the bank",no:"Doesn't fit",prio:"Priority",nw:"New",upd:"Info updated",
+  rate:"Rate",amt:"Amount",term:"Term",col2:"Collateral",dl:"Deadline",more:"Need to know",
+  eb2:"Copy and send",h2:"Ready answers",p2:"Copy and paste into chat or email.",cth:"คัดลอกภาษาไทย",cen:"Copy English",copied:"Copied",
+  eb4:"Calculate",h4:"Payment calculator (a preliminary estimate to give the client an overview — the actual amount requires submitting documents for the bank's assessment)",p4:"Enter the loan amount and term. Payments follow each product's step-up interest schedule.",prod:"Loan product",camt:"Loan amount (THB)",cyrs:"Term (years)",mlr:"MLR (%)",mrr:"MRR (%)",own:"Rate actually offered by the bank (% p.a.) — leave blank if none yet",hint:"MLR/MRR are assumptions — update them to the bank's announced rates · Monthly reducing balance; the payment is recalculated whenever the rate changes · Estimate only; actual figures depend on the bank",kpay:"Year-1 payment / month",kint:"Total interest",kavg:"Average rate p.a.",yr:"Year",rt:"Rate",pay:"Payment/month",intY:"Interest in year",bal:"Balance left",cmp:"All products compared at the same amount and term",bk:"Bank / product",tot:"Total interest",lim:"Limits",ok:"Within limits",norate:"No rate data",overA:"Above max amount",underA:"Below min amount",overT:"Above max term",underT:"Below min term",eb3:"Progress",h3:"Contact log",none:"Nothing matches that search.",
+  foot:"From bank documents (Jul–Oct 2026) and calls with banks. Rates and terms can change — confirm with the bank before quoting a client."}
+};
+
+/* rule helpers: return [status, reasonKey] */
+const P=[
+ {id:"kbank",upd:"2026-10-19 11:44",prio:1,bank:["กสิกรไทย","Kasikornbank (KBank)"],name:["สินเชื่อโซลาร์รูฟท็อปกสิกรไทย","K-Solar Rooftop Financing"],
+  rate:["MLR−1.00% (≤5 ปี), MLR−0.80% (≤8 ปี)","MLR−1.00% (≤5 yrs), MLR−0.80% (≤8 yrs)"],amt:["สูงสุด 100% ของโครงการ","Up to 100% of project cost"],term:["สูงสุด 8 ปี","Up to 8 years"],
+  col:["จดทะเบียนอุปกรณ์โซลาร์เป็นหลักประกัน / บสย.","Solar equipment as business collateral / TCG"],dl:["อัตราพิเศษถึง 31 ธ.ค. 2026","Special rate to 31 Dec 2026"],
+  
+  notes:[["พิจารณาจากค่าไฟที่ประหยัดได้ (Self-Financing Project)","ผู้ติดตั้งต้องทำรายงานประเมินการประหยัดพลังงาน — ใช้ PVsyst/Proposal ของเรา","แผงต้องเป็น Tier 1 (Bloomberg) อินเวอร์เตอร์ต้องอยู่ในรายชื่อการไฟฟ้า","ดำเนินกิจการ ≥3 ปี · ค่าธรรมเนียมจัดการ ≤2.5%","ยังไม่ยืนยัน: รับผู้ถือหุ้น/กรรมการต่างชาติไหม","📄 เอกสาร (ยืนยันจากสาขา 19 ต.ค.): บัตรประชาชน ×2, ทะเบียนบ้าน ×2, เอกสารคู่สมรส, หนังสือรับรองบริษัท ≤3 เดือน หรือทะเบียนการค้า หรือสลิปเงินเดือน 6 เดือน, บิลซื้อขาย 5 ใบ, statement 6 เดือน (ธนาคารอื่น), ใบเสนอราคาโซลาร์ (มูลค่ารวม), สัญญาติดตั้ง, Proposal"],
+         ["Assessed on electricity savings (self-financing project)","Installer must provide an energy-saving assessment — our PVsyst/proposal","Panels Bloomberg Tier 1; inverters on utility-approved list","≥3 years in business · front-end fee ≤2.5%","Not yet confirmed: foreign shareholders/directors accepted?","📄 Documents (confirmed by branch, 19 Oct): ID ×2, house registration ×2, spouse documents, company certificate ≤3 months or trade registration or 6-month payslips, 5 sales invoices, 6-month statements (other banks), solar quotation (total value), installation contract, proposal"]],
+  rule:q=>{ if(q.type==="ind")return["maybe","r_kb_ind"]; if(q.type==="co"&&q.nat==="fmaj")return["maybe","r_foreign_unconf"]; if(q.col==="house"||q.col==="land"||q.col==="none"||q.col==="any")return[q.type==="co"?"yes":"maybe",q.type==="co"?"r_kb_yes":"r_need_type"]; return["maybe","r_need_type"];}},
+ {id:"smed",upd:"2026-10-16 11:25",isNew:1,bank:["ธพว. (SME D Bank)","SME D Bank"],name:["SME GREEN Productivity","SME GREEN Productivity"],
+  rate:["3% คงที่ 3 ปีแรก แล้วเริ่ม MLR","3% fixed for 3 years, then from MLR"],amt:["สูงสุด 30 ล้านบาท","Up to THB 30M"],term:["≤10 ปี ปลอดเงินต้น ≤12 เดือน","≤10 yrs, principal grace ≤12 months"],
+  col:["บสย. หรือตามเกณฑ์ธนาคาร","TCG guarantee or per bank criteria"],dl:["ยื่นถึง 30 ธ.ค. 2026","Apply by 30 Dec 2026"],
+  notes:[["นิติบุคคลต้องมีคนไทยถือหุ้นเกิน 50% · EBITDA ปีล่าสุดเป็นบวก","บุคคลธรรมดา: คนไทย อายุ ≥20 (อายุ+ระยะกู้ ≤70) จดทะเบียนพาณิชย์","ดำเนินธุรกิจ ≥3 ปี · Front-end fee 2.5%"],
+         ["Companies must be >50% Thai-owned · positive EBITDA last year","Individuals: Thai, age ≥20 (age+term ≤70), commercially registered","≥3 years in business · front-end fee 2.5%"]],
+  rule:q=>{ if(q.type==="co"&&q.nat==="fmaj")return["no","r_thai50"]; if(q.type==="ind"&&(q.nat==="for"||q.nat==="fsp"))return["no","r_thai_only"]; if(q.type==="co"&&q.nat==="thmaj")return["yes","r_smed_yes"]; if(q.type==="ind"&&q.nat==="thai")return["maybe","r_biz_reg"]; return["maybe","r_need_type"];}},
+ {id:"bblbiz",upd:"2026-10-15 14:59",bank:["ธนาคารกรุงเทพ","Bangkok Bank"],name:["สินเชื่อธุรกิจสีเขียว (Transition)","Green business loan (Transition)"],
+  rate:["MLR−1.25% ปี 1–2 แล้ว MLR−1.00%","MLR−1.25% yrs 1–2, then MLR−1.00%"],amt:["ตามความเหมาะสมแต่ละราย","Case by case"],term:["สูงสุด 8 ปี","Up to 8 years"],
+  col:["หลักทรัพย์ / เครื่องจักร / บสย. / บุคคลค้ำ","Property / machinery / TCG / personal guarantee"],dl:["ต่ออายุแล้ว — ถามวันสิ้นสุดใหม่","Extended — new end date to confirm"],
+  notes:[["Front-end fee 0.25% (ปกติ 3%)","ปีล่าสุดต้องมีกำไร · D:E ≤ 3:1 · ไม่มีประวัติเสียหาย","ยังไม่ยืนยัน: ผู้ถือหุ้นต่างชาติ และใช้อุปกรณ์โซลาร์เป็นหลักประกันได้ไหม"],
+         ["Front-end fee 0.25% (normally 3%)","Profitable last year · D:E ≤ 3:1 · clean credit history","Not yet confirmed: foreign shareholders, and solar equipment as collateral"]],
+  rule:q=>{ if(q.type==="ind")return["maybe","r_biz_reg"]; if(q.type==="co"&&q.nat==="fmaj")return["maybe","r_foreign_unconf"]; if(q.type==="co")return["yes","r_bblbiz_yes"]; return["maybe","r_need_type"];}},
+ {id:"bbltf",upd:"2026-10-14 13:46",bank:["ธนาคารกรุงเทพ","Bangkok Bank"],name:["Bualuang Transformation Loan","Bualuang Transformation Loan"],
+  rate:["คงที่ 5% ต่อปี","Fixed 5% p.a."],amt:["ตามขนาดโครงการ","By project size"],term:["สูงสุด 5 ปี","Up to 5 years"],col:["แตกต่างตามธุรกิจ","Varies by business"],dl:["—","—"],
+  notes:[["SME บุคคลหรือนิติบุคคล ใช้ลงทุน Green รวมถึง Solar Cell","ต้องถามหลักประกันและเงื่อนไขผู้ถือหุ้นต่างชาติ"],["SME individuals or companies; Green investment incl. solar","Ask about collateral and foreign shareholders"]],
+  rule:q=>{ if(q.type==="any")return["maybe","r_need_type"]; if(q.type==="co"&&q.nat==="fmaj")return["maybe","r_foreign_unconf"]; return["maybe","r_ask_detail"];}},
+ {id:"ghbroof",upd:"2026-10-15 14:56",bank:["ธอส.","GH Bank"],name:["Solar Roof Loan 2026","Solar Roof Loan 2026"],
+  rate:["ปี 1 2.20%, ปี 2 3.25% (เฉลี่ย ~4.24%)","Yr 1 2.20%, yr 2 3.25% (avg ~4.24%)"],amt:["ใช้รายได้ สูงสุด 300,000 บาท","Income-based up to THB 300k"],term:["3–10 ปี","3–10 years"],col:["รายได้หรือหลักประกัน","Income or collateral"],dl:["มีหลายโปร — โทรถามโปรปัจจุบัน","Several promos — confirm current one"],
+  notes:[["✅ ติดต่อแล้ว 15 ต.ค.: บุคคลธรรมดาเท่านั้น","คนไทย หรือต่างชาติที่มีคู่สมรสคนไทย","ใช้ที่ดินค้ำ: คู่สมรสคนไทยต้องถือกรรมสิทธิ์แต่เพียงผู้เดียว","ประเภทสินเชื่อขึ้นกับเจ้าหน้าที่"],["✅ Called 15 Oct: individuals only","Thai, or foreigner with a Thai spouse","Land as collateral: Thai spouse must hold title solely","Loan type decided by the officer"]],
+  rule:q=>{ if(q.type==="co")return["no","r_ind_only"]; if(q.nat==="for")return["no","r_ghb_for"]; if(q.type==="ind"&&(q.nat==="thai"||q.nat==="fsp"))return["yes",q.nat==="fsp"?"r_ghb_fsp":"r_ghb_yes"]; return["maybe","r_need_type"];}},
+ {id:"ghbhome",upd:"2026-10-15 14:55",isNew:1,bank:["ธอส.","GH Bank"],name:["สินเชื่อบ้านหลังคา Solar Rooftop","Solar Rooftop Home Loan"],
+  rate:["ปีแรก 0.99–2.99% (EIR ~4.7%)","Yr 1 0.99–2.99% (EIR ~4.7%)"],amt:["ตามเกณฑ์สินเชื่อรายย่อย","Per retail lending rules"],term:["3–40 ปี","3–40 years"],col:["บ้านที่ซื้อ/สร้างใหม่","The new house bought/built"],dl:["ทำนิติกรรมภายใน 30 ธ.ค. 2026","Contract by 30 Dec 2026"],
+  notes:[["เฉพาะซื้อ/สร้างบ้านใหม่พร้อมโซลาร์ — เหมาะถ้าลูกค้าจะสร้างบ้านบนที่ดินตัวเอง","ธนาคารช่วยค่าติดตั้ง 10% สูงสุด 30,000 (<5 kW) / 50,000 บาท (≥5 kW)","ผู้ติดตั้งต้องออกใบกำกับภาษีได้"],["Only for buying/building a new home with solar — fits if the client builds on their land","Bank pays 10% of install cost, max THB 30k (<5 kW) / 50k (≥5 kW)","Installer must issue a tax invoice"]],
+  rule:q=>{ if(q.type==="co")return["no","r_ind_only"]; if(q.nat==="for")return["no","r_ghb_for"]; if(q.col==="land")return["maybe","r_build"]; if(q.type==="ind")return["maybe","r_build"]; return["maybe","r_need_type"];}},
+ {id:"gsbsfl",upd:"2026-10-14 13:19",isNew:1,bank:["ออมสิน","GSB"],name:["GSB Solar for Life (Soft Loan)","GSB Solar for Life (Soft Loan)"],
+  rate:["3.25–3.50% ปี 1–5","3.25–3.50% yrs 1–5"],amt:["สูงสุด 1 ล้านบาท","Up to THB 1M"],term:["สูงสุด 7 ปี","Up to 7 years"],col:["ไม่มี (≤500k) หรืออสังหาฯ ≤90%","None (≤500k) or real estate ≤90%"],dl:["ยื่นถึง 31 มี.ค. 2027","Apply by 31 Mar 2027"],
+  notes:[["บุคคลธรรมดาสัญชาติไทยเท่านั้น","ต้องมีเงินดาวน์ 10–20%","ที่ดินเปล่าเป็นหลักประกันได้ไหม — ต้องถาม"],["Thai individuals only","10–20% down payment required","Vacant land as collateral — to confirm"]],
+  rule:q=>{ if(q.type==="co")return["no","r_ind_only"]; if(q.nat==="for"||q.nat==="fsp")return["no","r_thai_only"]; if(q.type==="ind"&&q.nat==="thai")return[q.col==="land"?"maybe":"yes",q.col==="land"?"r_land_unconf":"r_gsb_yes"]; return["maybe","r_need_type"];}},
+ {id:"bblpp",upd:"2026-10-14 13:47",bank:["ธนาคารกรุงเทพ","Bangkok Bank"],name:["บัวหลวงพูนผลกรีน","Bualuang Poonphol Green"],
+  rate:["ปี 1 4.99% (EIR 5.43–5.72%)","Yr 1 4.99% (EIR 5.43–5.72%)"],amt:["สูงสุด 10 ล้านบาท","Up to THB 10M"],term:["สูงสุด 30 ปี","Up to 30 years"],col:["บ้านที่อยู่อาศัยของผู้กู้","Borrower's own residence"],dl:["โปรถึง 30 ธ.ค. 2026","Promo to 30 Dec 2026"],
+  notes:[["คนไทย อายุ 20–65 รายได้ ≥15,000 บาท/เดือน","ไม่รับที่ดินเปล่า/สิทธิการเช่า"],["Thai, age 20–65, income ≥ THB 15,000/month","Vacant land / leasehold NOT accepted"]],
+  rule:q=>{ if(q.type==="co")return["no","r_ind_only"]; if(q.nat==="for"||q.nat==="fsp")return["no","r_thai_only"]; if(q.col==="land"||q.col==="none")return["no","r_house_only"]; if(q.type==="ind"&&q.nat==="thai"&&q.col==="house")return["yes","r_house_yes"]; return["maybe","r_need_type"];}},
+ {id:"krungsri",upd:"2026-10-14 13:53",bank:["กรุงศรี","Krungsri"],name:["Home for Cash (Solar Rooftop)","Home for Cash (Solar Rooftop)"],
+  rate:["ปีแรก 4.99–7.99% ตามวงเงิน","Yr 1 4.99–7.99% by loan size"],amt:["≤85% ราคาประเมิน ขั้นต่ำ 300,000","≤85% of value, min THB 300k"],term:["สูงสุด 30 ปี","Up to 30 years"],col:["ที่อยู่อาศัยปลอดภาระ","Unencumbered residence"],dl:["จดจำนองภายใน 31 ม.ค. 2027","Mortgage by 31 Jan 2027"],
+  notes:[["ยิ่งกู้มากดอกเบี้ยยิ่งต่ำ","ไม่รับที่ดินเปล่า · อายุ+ระยะกู้ ≤65"],["Larger loans get lower rates","Vacant land NOT accepted · age+term ≤65"]],
+  rule:q=>{ if(q.type==="co")return["no","r_ind_only"]; if(q.col==="land"||q.col==="none")return["no","r_house_only"]; if(q.type==="ind"&&q.col==="house")return[q.nat==="thai"?"yes":"maybe",q.nat==="thai"?"r_house_yes":"r_nat_unconf"]; return["maybe","r_need_type"];}},
+ {id:"scbtu",upd:"2026-10-14 10:11",bank:["SCB","SCB"],name:["Home Loan Top Up","Home Loan Top Up"],
+  rate:["~5.075–7.075%","~5.075–7.075%"],amt:["ตามเงินต้นที่ผ่อนไปแล้ว","Based on principal repaid"],term:["สูงสุด 30 ปี","Up to 30 years"],col:["บ้านที่จำนองกับ SCB อยู่","House already mortgaged to SCB"],dl:["—","—"],
+  notes:[["เฉพาะลูกค้าสินเชื่อบ้าน SCB ที่ผ่อนตรง ≥2 ปี"],["Only existing SCB mortgage customers (≥2 yrs on time)"]],
+  rule:q=>{ if(q.type==="co")return["no","r_ind_only"]; if(q.col==="land"||q.col==="none")return["no","r_scb_tu"]; return["maybe","r_scb_tu"];}}
+];
+
+const R={
+ r_kb_yes:["ตรงกับที่ต้องการ: พิจารณาจากผลประหยัดของโซลาร์ ใช้อุปกรณ์เป็นหลักประกัน ไม่ต้องใช้ที่ดิน","Our target program: assessed on solar savings, equipment as collateral, no land needed"],
+ r_kb_ind:["บุคคลธรรมดาใช้ได้ถ้ามีทะเบียนการค้าหรือสลิปเงินเดือน — ติดต่อธนาคารเพื่อยืนยันเงื่อนไข","Individuals may qualify with trade registration or payslips — contact the bank to confirm"],
+ r_foreign_unconf:["ยังไม่ยืนยันว่ารับผู้ถือหุ้น/กรรมการต่างชาติ — ติดต่อธนาคารเพื่อยืนยัน","Foreign shareholders/directors not yet confirmed — ask the bank"],
+ r_need_type:["ต้องรู้ก่อนว่ากู้ในนามบุคคลหรือบริษัท และสัญชาติผู้กู้","Need to know: individual or company, and nationality"],
+ r_thai50:["นิติบุคคลต้องมีคนไทยถือหุ้นเกิน 50%","Companies must be more than 50% Thai-owned"],
+ r_thai_only:["ให้กู้เฉพาะคนไทย","Thai nationals only"],
+ r_smed_yes:["ดอกเบี้ย 3% ต่ำสุดสำหรับธุรกิจ · ต้องมี EBITDA เป็นบวกและทำธุรกิจ ≥3 ปี","Lowest business rate (3%) · needs positive EBITDA and ≥3 years"],
+ r_biz_reg:["ใช้ได้ถ้าเป็นบุคคลที่จดทะเบียนพาณิชย์/ทำธุรกิจ — ต้องถาม","Only if the individual runs a registered business — ask"],
+ r_bblbiz_yes:["ค่าธรรมเนียมต่ำ 0.25% · ต้องมีกำไรปีล่าสุดและ D:E ≤3:1","Low 0.25% fee · needs profit last year and D:E ≤3:1"],
+ r_ask_detail:["อาจใช้ได้ — ติดต่อธนาคารเพื่อยืนยันเงื่อนไข","Possible — details to confirm with the bank"],
+ r_ind_only:["ให้กู้เฉพาะบุคคลธรรมดา ไม่รับบริษัท","Individuals only — companies not accepted"],
+ r_ghb_for:["ต่างชาติกู้ได้เฉพาะเมื่อมีคู่สมรสคนไทย","Foreigners only with a Thai spouse"],
+ r_ghb_yes:["ธนาคารยืนยันแล้ว (15 ต.ค.) — ประเภทสินเชื่อขึ้นกับเจ้าหน้าที่","Confirmed by the bank (15 Oct) — loan type decided by officer"],
+ r_ghb_fsp:["ได้ ถ้าใช้ที่ดินค้ำ คู่สมรสคนไทยต้องถือกรรมสิทธิ์แต่เพียงผู้เดียว","Yes — if land is collateral, the Thai spouse must hold the title solely"],
+ r_build:["ใช้ได้ถ้าลูกค้าจะสร้าง/ซื้อบ้านใหม่พร้อมติดโซลาร์","Only if the client builds/buys a new home with solar"],
+ r_gsb_yes:["ดอกเบี้ยต่ำ 3.25–3.50% · ต้องมีเงินดาวน์ 10–20%","Low 3.25–3.50% · needs 10–20% down payment"],
+ r_land_unconf:["ยังไม่รู้ว่ารับที่ดินเปล่าไหม — ต้องถาม","Vacant land not confirmed — ask"],
+ r_house_only:["ต้องมีบ้าน/ที่อยู่อาศัยเป็นหลักประกัน ไม่รับที่ดินเปล่า","Needs a house/residence as collateral — no vacant land"],
+ r_house_yes:["ใช้บ้านค้ำ วงเงินสูง ผ่อนได้นาน","House-backed, high amount, long term"],
+ r_nat_unconf:["เอกสารไม่ได้ระบุเรื่องผู้กู้ต่างชาติ — ต้องถาม","Foreign borrowers not addressed — ask"],
+ r_scb_tu:["ใช้ได้เฉพาะลูกค้าที่มีสินเชื่อบ้านกับ SCB อยู่แล้ว","Only for existing SCB mortgage customers"]
+};
+
+
+const LOGO={"bbl": "data:image/webp;base64,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", "ghb": "data:image/webp;base64,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", "gsb": "data:image/webp;base64,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", "kbank": "data:image/webp;base64,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", "krungsri": "data:image/webp;base64,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", "scb": "data:image/webp;base64,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", "smed": "data:image/webp;base64,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"};
+const BK={kbank:"kbank",bblbiz:"bbl",bbltf:"bbl",bblpp:"bbl",scbtu:"scb",gsbsfl:"gsb",ghbroof:"ghb",ghbhome:"ghb",smed:"smed",krungsri:"krungsri"};
+let lang="th";
+try{const s=localStorage.getItem("sld-lang"); if(s==="en"||s==="th")lang=s;}catch(e){}
+const $=id=>document.getElementById(id);
+const L=()=>UI[lang]; const ix=()=>lang==="th"?0:1;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function fill(sel,opts,keep){const cur=(keep!==undefined&&keep!==null)?keep:sel.value; sel.innerHTML=opts.map(([v,t])=>`<option value="${v}">${esc(t)}</option>`).join(""); if(opts.some(o=>o[0]===cur))sel.value=cur;}
+function state(){return{type:$("f-type").value,nat:$("f-nat").value,col:$("f-col").value};}
+
+function hl(text,q){ if(!q)return esc(text); const i=text.toLowerCase().indexOf(q.toLowerCase()); if(i<0)return esc(text); return esc(text.slice(0,i))+"<mark>"+esc(text.slice(i,i+q.length))+"</mark>"+esc(text.slice(i+q.length));}
+function hay(p){return [p.bank,p.name,p.rate,p.amt,p.term,p.col,p.dl,p.notes[0],p.notes[1]].flat().join(" ").toLowerCase();}
+
+const MTH=[["ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."],["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]];
+function fmtD(d){const [y,m,dd]=d.slice(0,10).split("-");return `${+dd} ${MTH[ix()][+m-1]} ${y}`;}
+function render(){
+ const u=L(), i=ix(), q=$("q").value.trim(), st=state();
+ const order={yes:0,maybe:1,no:2};
+ let list=P.map(p=>{const [s,r]=p.rule(st); return {p,s,r};});
+ if(q) list=list.filter(x=>hay(x.p).includes(q.toLowerCase()));
+ const BO={kbank:1,bblbiz:2,bbltf:2,bblpp:2,scbtu:3,gsbsfl:4,ghbroof:5,ghbhome:5,smed:6,krungsri:7};
+ list.sort((a,b)=>(BO[a.p.id]-BO[b.p.id])||b.p.upd.localeCompare(a.p.upd));
+ const c={yes:0,maybe:0,no:0}; list.forEach(x=>c[x.s]++);
+ $("tally").innerHTML=`<span class="pill yes">${u.yes} ${c.yes}</span><span class="pill maybe">${u.maybe} ${c.maybe}</span><span class="pill no">${u.no} ${c.no}</span>`;
+ $("cards").innerHTML=list.length?list.map(({p,s,r})=>`
+  <article class="card ${s==="no"?"no":""}">
+   <div class="hd"><img class="logo" src="${LOGO[BK[p.id]]}" alt="${esc(p.bank[i])}">
+    <div class="tags">${p.prio?`<span class="pill prio">${u.prio}</span>`:""}${p.isNew?`<span class="pill new">${u.nw}</span>`:""}<span class="pill ${s}">${u[s]}</span></div></div>
+   <div><div class="bank">${hl(p.bank[i],q)}</div><h3>${hl(p.name[i],q)}</h3></div>
+   <div class="why ${s}">${esc(R[r][i])}</div>
+   <dl class="facts"><dt>${u.rate}</dt><dd class="mono">${hl(p.rate[i],q)}</dd><dt>${u.amt}</dt><dd>${hl(p.amt[i],q)}</dd><dt>${u.term}</dt><dd>${hl(p.term[i],q)}</dd><dt>${u.col2}</dt><dd>${hl(p.col[i],q)}</dd><dt>${u.dl}</dt><dd>${hl(p.dl[i],q)}</dd></dl>
+   <details ${q?"open":""}><summary>${u.more}</summary><ul>${p.notes[i].map(n=>`<li>${hl(n,q)}</li>`).join("")}</ul></details>
+   <div class="upd">${u.upd} ${fmtD(p.upd)}</div>
+  </article>`).join(""):`<div class="empty">${u.none}</div>`;
+}
+
+function applyLang(){
+ const u=L(); document.documentElement.lang=lang;
+ $("sub").textContent=u.sub; $("q").placeholder=u.q; $("q").setAttribute("aria-label",u.q);
+ ["eb1","h1","p1"].forEach(k=>{const el=$("t-"+k); if(el)el.textContent=u[k];});
+ $("l-type").textContent=u.type; $("l-col").textContent=u.col; $("foot").textContent=u.foot;
+ fill($("f-type"),u.types); fill($("f-col"),u.cols); natOpts();
+ $("lang-th").setAttribute("aria-pressed",lang==="th"); $("lang-en").setAttribute("aria-pressed",lang==="en");
+ render(); if(typeof calcLang==="function")calcLang();
+}
+function natOpts(){const u=L(), co=$("f-type").value==="co"; $("l-nat").textContent=co?u.natC:u.nat; fill($("f-nat"),co?u.natsC:u.natsI);}
+
+$("lang-th").onclick=()=>{lang="th";try{localStorage.setItem("sld-lang",lang)}catch(e){} applyLang();};
+$("lang-en").onclick=()=>{lang="en";try{localStorage.setItem("sld-lang",lang)}catch(e){} applyLang();};
+$("f-type").onchange=()=>{$("f-nat").value="any"; natOpts(); render();};
+$("f-nat").onchange=render; $("f-col").onchange=render; $("q").oninput=render;
+
+/* ---- calculator: rate(y,amt,yrs,M) returns annual % for year y (1-based); M={mlr,mrr} ---- */
+const C=[
+ {id:"kbank",n:["กสิกรไทย — K-Solar Rooftop","KBank — K-Solar Rooftop"],maxA:null,minT:1,maxT:8,rate:(y,a,t,M)=>t<=5?M.mlr-1:M.mlr-0.8},
+ {id:"bblbiz",n:["กรุงเทพ — ธุรกิจสีเขียว (Transition)","Bangkok Bank — Green business (Transition)"],maxA:null,minT:1,maxT:8,rate:(y,a,t,M)=>y<=2?M.mlr-1.25:M.mlr-1},
+ {id:"bbltf",n:["กรุงเทพ — Transformation Loan","Bangkok Bank — Transformation Loan"],maxA:null,minT:1,maxT:5,rate:()=>5},
+ {id:"bblpp",n:["กรุงเทพ — พูนผลกรีน (Home for Cash, ทำประกัน)","Bangkok Bank — Poonphol Green (Home for Cash, insured)"],maxA:10e6,minT:1,maxT:30,rate:(y,a,t,M)=>y===1?4.99:M.mrr-0.75},
+ {id:"scbtu",n:["SCB — Home Loan Top Up (อัตราต่ำสุด)","SCB — Home Loan Top Up (lowest rate)"],maxA:null,minT:1,maxT:30,rate:(y,a,t,M)=>M.mrr-1.5},
+ {id:"gsbsfl",n:["ออมสิน — Solar for Life (มีหลักประกัน ดาวน์ 20%)","GSB — Solar for Life (secured, 20% down)"],maxA:1e6,minT:1,maxT:7,rate:(y,a,t,M)=>y<=5?3.25:M.mrr-0.75},
+ {id:"gsbsflc",n:["ออมสิน — Solar for Life (ไม่มีหลักประกัน)","GSB — Solar for Life (unsecured)"],maxA:5e5,minT:1,maxT:7,rate:(y,a,t,M)=>y<=2?3.5:y<=5?5:M.mrr},
+ {id:"ghbroof",n:["ธอส. — Solar Roof Loan 2026","GH Bank — Solar Roof Loan 2026"],maxA:3e5,minT:3,maxT:10,rate:(y,a,t,M)=>y===1?2.2:y===2?3.25:y===3?M.mrr-2.895:M.mrr},
+ {id:"ghbhome",n:["ธอส. — บ้านหลังคา Solar Rooftop (ทำประกัน)","GH Bank — Solar Rooftop Home Loan (insured)"],maxA:null,minT:3,maxT:40,rate:(y,a,t,M)=>y===1?2.32:y===2?3.75:y===3?M.mrr-2.145:y<=5?M.mrr-1.5:M.mrr-0.5},
+ {id:"smed",n:["ธพว. — SME GREEN Productivity","SME D Bank — SME GREEN Productivity"],maxA:30e6,minT:1,maxT:10,rate:(y,a,t,M)=>y<=3?3:M.mlr},
+ {id:"krungsri",n:["กรุงศรี — Home for Cash (ทางเลือก 1)","Krungsri — Home for Cash (option 1)"],minA:3e5,maxA:null,minT:1,maxT:30,rate:(y,a,t,M)=>{const T=a<1e6?[7.99,1.32,1.32,2.15]:a<3e6?[6.65,-0.02,-0.02,0]:a<5e6?[5.95,-0.72,-0.72,0]:[5.35,-1.32,-1.32,0];return y===1?T[0]:y<=3?M.mrr+T[y-1]:M.mrr+T[3];}}
+];
+const fmt=n=>Math.round(n).toLocaleString("en-US");
+function sched(c,amt,yrs,M,own){
+ const n=Math.round(yrs*12); let bal=amt, totI=0, rows=[], firstPay=null, sumB=0;
+ for(let y=1;y<=Math.ceil(yrs);y++){
+  const r=own!=null?own:c.rate(y,amt,yrs,M); const mr=Math.max(r,0)/1200; const left=n-(y-1)*12; if(left<=0)break;
+  const pay=mr===0?bal/left:bal*mr/(1-Math.pow(1+mr,-left)); let iy=0;
+  for(let m=0;m<12&&m<left;m++){sumB+=bal; const i=bal*mr; iy+=i; bal=bal-(pay-i);} if(bal<0.5)bal=0;
+  totI+=iy; if(firstPay===null)firstPay=pay; rows.push([y,r,pay,iy,bal]);
+ }
+ return {rows,totI,firstPay,avg:sumB>0?totI/(sumB/12)*100:0};
+}
+function limits(c,amt,yrs){const u=L(),w=[]; if(c.maxA&&amt>c.maxA)w.push(u.overA+" ("+fmt(c.maxA)+")"); if(c.minA&&amt<c.minA)w.push(u.underA+" ("+fmt(c.minA)+")"); if(yrs>c.maxT)w.push(u.overT+" ("+c.maxT+")"); if(yrs<c.minT)w.push(u.underT+" ("+c.minT+")"); return w;}
+function calc(){
+ const u=L(), i=ix(), amt=+$("c-amt").value||0, yrs=+$("c-yrs").value||0, M={mlr:+$("c-mlr").value||0,mrr:+$("c-mrr").value||0};
+ const ownV=$("c-own").value.trim(), own=ownV===""?null:+ownV;
+ const c=C.find(x=>x.id===$("c-prod").value)||C[0];
+ $("c-head").innerHTML=`<th>${u.yr}</th><th>${u.rt}</th><th>${u.pay}</th><th>${u.intY}</th><th>${u.bal}</th>`;
+ const w=limits(c,amt,yrs);
+ if(!c.rate&&own==null){$("k-pay").textContent=$("k-int").textContent=$("k-avg").textContent="–";$("c-rows").innerHTML="";$("c-warn").innerHTML=`<div class="warn">${u.norate} — ${esc(u.own)}</div>`;}
+ else if(amt<=0||yrs<=0){$("c-rows").innerHTML="";$("c-warn").innerHTML="";}
+ else{const r=sched(c,amt,yrs,M,own);
+  $("k-pay").textContent=fmt(r.firstPay); $("k-int").textContent=fmt(r.totI); $("k-avg").textContent=r.avg.toFixed(2)+"%";
+  $("c-rows").innerHTML=r.rows.map(x=>`<tr><td>${x[0]}</td><td>${x[1].toFixed(2)}%</td><td>${fmt(x[2])}</td><td>${fmt(x[3])}</td><td>${fmt(x[4])}</td></tr>`).join("");
+  $("c-warn").innerHTML=w.length?`<div class="warn">⚠️ ${esc(w.join(" · "))}</div>`:"";}
+}
+function calcLang(){const u=L(),i=ix();
+ ["eb4","h4","p4"].forEach(k=>$("t-"+k).textContent=u[k]);
+ $("l-prod").textContent=u.prod;$("l-amt").textContent=u.camt;$("l-yrs").textContent=u.cyrs;$("l-mlr").textContent=u.mlr;$("l-mrr").textContent=u.mrr;$("l-own").textContent=u.own;$("c-hint").textContent=u.hint;
+ $("k-pay-l").textContent=u.kpay;$("k-int-l").textContent=u.kint;$("k-avg-l").textContent=u.kavg;
+ fill($("c-prod"),C.map(c=>[c.id,c.n[i]])); calc();}
+["c-prod","c-amt","c-yrs","c-mlr","c-mrr","c-own"].forEach(id=>$(id).addEventListener("input",calc));
+
+applyLang();
+</script>
+
+</body>
+</html>
+
+</body></html>
